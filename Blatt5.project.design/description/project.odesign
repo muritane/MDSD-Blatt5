@@ -4,13 +4,43 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="testdiagramm" domainClass="Repository::Repository" enablePopupBars="true">
       <metamodel href="http://www.example.org/blatt1#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="test" domainClass="Component">
-          <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+        <nodeMappings name="Component" domainClass="Component">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW" width="10" height="5">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
           </style>
         </nodeMappings>
+        <nodeMappings name="Interface" domainClass="Interface">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW" width="10" height="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Role" domainClass="Role">
+          <style xsi:type="style:LozengeNodeDescription" labelSize="12" sizeComputationExpression="5" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="RequiredRole_RequiringComponent" sourceMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Component']" targetMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Role']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="RequiredInterface_RequiredRole" sourceMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Role']" targetMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
       </defaultLayer>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="Blatt5.project.design.Services"/>
