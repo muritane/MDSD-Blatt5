@@ -39,7 +39,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="RequiredRole_RequiringComponent" sourceMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Component']" targetMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Role']">
+        <edgeMappings name="RequiredRole_RequiringComponent???" sourceMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Component']" targetMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Role']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -47,7 +47,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="Signature" sourceMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']" targetMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Signature']">
+        <edgeMappings name="Signature" sourceMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']" targetMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Signature']" targetFinderExpression="feature:signature">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -55,7 +55,23 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="DelegationConnector" sourceMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Role']" targetMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']" domainClass="Assembly::DelegationConnector" useDomainElement="true">
+        <edgeMappings name="DelegationConnector" sourceMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Role']" targetMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']" targetFinderExpression="feature:interface" sourceFinderExpression="feature:role" domainClass="Assembly::DelegationConnector" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="requiredInterface" sourceMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Component']" targetMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']" targetFinderExpression="feature:requiredInterface">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="providedInterface" sourceMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Component']" targetMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']" targetFinderExpression="feature:providedInterface">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
