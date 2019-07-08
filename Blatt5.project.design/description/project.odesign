@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="project" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="project" version="12.0.0.2017041100">
   <ownedViewpoints name="repository" modelFileExtension="repository">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="testdiagramm" domainClass="Repository::Repository" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="testdiagramm" initialisation="true" domainClass="Repository::Repository" enablePopupBars="true">
       <metamodel href="http://www.example.org/blatt1#/"/>
       <metamodel href="../../Blatt1/model/blatt1.ecore#/"/>
       <metamodel href="../../Blatt1/model/blatt1.ecore#//Repository"/>
@@ -25,7 +25,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Role" domainClass="Assebly::Role">
+        <nodeMappings name="Role" domainClass="Assembly::Role">
           <style xsi:type="style:LozengeNodeDescription" labelSize="12" sizeComputationExpression="5" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -110,6 +110,30 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
+        <toolSections name="CreateStuff">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Interface" nodeMappings="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Repository::Interface" referenceName="Interfaces">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Interface' + container.eContents()->filter(Repository::Interfaces)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="requiredInterface" edgeMappings="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@edgeMappings[name='requiredInterface']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="Repository::Component">
+                <subModelOperations xsi:type="tool:CreateEdgeView" mapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@edgeMappings[name='requiredInterface']" containerViewExpression="requiredInterface" sourceExpression="requiredInterface" targetExpression="requiredInterface"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
       </defaultLayer>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="Blatt5.project.design.Services"/>
