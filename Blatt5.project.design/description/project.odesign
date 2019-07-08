@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="project" version="12.0.0.2017041100">
   <ownedViewpoints name="repository" modelFileExtension="repository">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="testdiagramm" initialisation="true" domainClass="Repository::Repository" enablePopupBars="true">
-      <metamodel href="http://www.example.org/blatt1#/"/>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="testdiagramm" initialisation="true" domainClass="Repository.Repository" enablePopupBars="true">
       <metamodel href="../../Blatt1/model/blatt1.ecore#/"/>
       <metamodel href="../../Blatt1/model/blatt1.ecore#//Repository"/>
       <metamodel href="../../Blatt1/model/blatt1.ecore#//Assembly"/>
@@ -11,35 +10,35 @@
       <metamodel href="../../Blatt1/model/blatt1.ecore#//Repository/Types"/>
       <metamodel href="../../Blatt1/model/blatt1.ecore#//Repository/Behaviour"/>
       <defaultLayer name="Default">
-        <nodeMappings name="Component" domainClass="Repository::Component">
+        <nodeMappings name="Component" domainClass="Repository.Component">
           <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW" width="10" height="5">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Interface" domainClass="Repository::Interface">
+        <nodeMappings name="Interface" domainClass="Repository.Interface">
+          <borderedNodeMappings name="Signature" domainClass="Types.Signature">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            </style>
+          </borderedNodeMappings>
           <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW" width="10" height="5">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Role" domainClass="Assembly::Role">
+        <nodeMappings name="Role" domainClass="Assembly.Role">
           <style xsi:type="style:LozengeNodeDescription" labelSize="12" sizeComputationExpression="5" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Signature" domainClass="Types::Signature">
-          <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
-          </style>
-        </nodeMappings>
-        <nodeMappings name="AssemblyContext" domainClass="Assembly::AssemblyContext">
+        <nodeMappings name="AssemblyContext" domainClass="Assembly.AssemblyContext">
           <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -54,7 +53,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="Signature" sourceMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']" targetMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Signature']" targetFinderExpression="feature:signature">
+        <edgeMappings name="Signature" sourceMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']" targetMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']/@borderedNodeMappings[name='Signature']" targetFinderExpression="feature:signature">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -62,7 +61,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="DelegationConnector" sourceMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Role']" targetMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']" targetFinderExpression="feature:interface" sourceFinderExpression="feature:role" domainClass="Assembly::DelegationConnector" useDomainElement="true">
+        <edgeMappings name="DelegationConnector" sourceMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Role']" targetMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']" targetFinderExpression="feature:interface" sourceFinderExpression="feature:role" domainClass="Assembly.DelegationConnector" useDomainElement="true">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -116,8 +115,8 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Repository::Interface" referenceName="Interfaces">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Interface' + container.eContents()->filter(Repository::Interfaces)->size()"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Interface" referenceName="Interfaces">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Interface' + container.eContents()->filter(Repository.Interfaces)->size()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -128,7 +127,7 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="Repository::Component">
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var.:ource">
                 <subModelOperations xsi:type="tool:CreateEdgeView" mapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@edgeMappings[name='requiredInterface']" containerViewExpression="requiredInterface" sourceExpression="requiredInterface" targetExpression="requiredInterface"/>
               </firstModelOperations>
             </initialOperation>
