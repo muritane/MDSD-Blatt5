@@ -210,8 +210,8 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Assembly::DelegationConnector">
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Assembly::DelegationConnector" referenceName="delegationConnectors">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="role" valueExpression="var:source"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="interface" valueExpression="var:target"/>
                 </subModelOperations>
