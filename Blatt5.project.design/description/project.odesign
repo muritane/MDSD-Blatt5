@@ -31,14 +31,14 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Role" domainClass="Assembly.Role">
+        <nodeMappings name="Role" domainClass="Assembly::Role">
           <style xsi:type="style:LozengeNodeDescription" labelSize="12" sizeComputationExpression="5" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="AssemblyContext" domainClass="Assembly.AssemblyContext">
+        <nodeMappings name="AssemblyContext" domainClass="Assembly::AssemblyContext">
           <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -53,7 +53,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="DelegationConnector" sourceMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Role']" targetMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']" targetFinderExpression="feature:interface" sourceFinderExpression="feature:role" domainClass="Assembly.DelegationConnector" useDomainElement="true">
+        <edgeMappings name="DelegationConnector" sourceMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Role']" targetMapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']" targetFinderExpression="feature:interface" sourceFinderExpression="feature:role" domainClass="Assembly::DelegationConnector" useDomainElement="true">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -166,8 +166,8 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var.:ource">
-                <subModelOperations xsi:type="tool:CreateEdgeView" mapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@edgeMappings[name='providedInterface']" containerViewExpression="providedInterface" sourceExpression="providedInterface" targetExpression="providedInterface"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="providedInterface" valueExpression="var:target"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -188,8 +188,8 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="Assembly.AssemblyContext">
-                <subModelOperations xsi:type="tool:CreateEdgeView" mapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@edgeMappings[name='requiredRole']" containerViewExpression="requiredRole" sourceExpression="requiredRole" targetExpression="requiredRole"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="requiredRole" valueExpression="var:target"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -211,7 +211,10 @@
             <targetViewVariable name="targetView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext">
-                <subModelOperations xsi:type="tool:CreateEdgeView" mapping="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@edgeMappings[name='DelegationConnector']" containerViewExpression="self" sourceExpression="var:source" targetExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Assembly::DelegationConnector">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="role" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="interface" valueExpression="var:target"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
