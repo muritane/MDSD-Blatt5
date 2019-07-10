@@ -18,7 +18,7 @@
           </style>
         </nodeMappings>
         <nodeMappings name="Interface" domainClass="Repository.Interface">
-          <borderedNodeMappings name="Signature" domainClass="Types.Signature">
+          <borderedNodeMappings name="Signature" semanticCandidatesExpression="feature:signature" domainClass="Types.Signature">
             <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -102,14 +102,12 @@
           </style>
         </edgeMappings>
         <toolSections name="CreateStuff">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Interface" nodeMappings="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Interface" nodeMappings="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Interface" referenceName="Interfaces">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Interface' + container.eContents()->filter(Repository.Interfaces)->size()"/>
-                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Interface" referenceName="Interfaces"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
