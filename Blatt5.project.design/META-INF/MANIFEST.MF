@@ -15,3 +15,4 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: %providerName
 Automatic-Module-Name: Blatt5.project.design
+Import-Package: org.eclipse.sirius.ext.gmf.runtime.gef.ui.figures;version="5.1.0"
