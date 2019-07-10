@@ -19,6 +19,13 @@
         </nodeMappings>
         <nodeMappings name="Interface" domainClass="Repository.Interface">
           <borderedNodeMappings name="Signature" semanticCandidatesExpression="feature:signature" domainClass="Types.Signature">
+            <borderedNodeMappings name="Parameter" semanticCandidatesExpression="feature:parameterType" domainClass="Types.Type">
+              <style xsi:type="style:LozengeNodeDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+              </style>
+            </borderedNodeMappings>
             <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -213,6 +220,15 @@
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="role" valueExpression="var:source"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="interface" valueExpression="var:target"/>
                 </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Parameter" nodeMappings="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']/@borderedNodeMappings[name='Signature']/@borderedNodeMappings[name='Parameter']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Type" referenceName="parameterType"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
