@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="project" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="project" version="12.0.0.2017041100">
   <ownedViewpoints name="repository" modelFileExtension="repository">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="testdiagramm" initialisation="true" domainClass="Repository.Repository" enablePopupBars="true">
       <metamodel href="http://www.example.org/blatt1#/"/>
@@ -17,6 +17,90 @@
         </nodeMappings>
         <nodeMappings name="Interface" semanticCandidatesExpression="feature:Interfaces" domainClass="Repository.Interface">
           <borderedNodeMappings name="Signature" semanticCandidatesExpression="feature:signature" domainClass="Types.Signature">
+            <borderedNodeMappings name="ParameterList" label="Parameter" domainClass="Types.List">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="ParameterList" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="ParameterMap" label="Parameter" domainClass="Types.Map">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="ParameterMap" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="ParameterComplexType" label="Parameter" domainClass="Types.ComplexType">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="ParameterComplexType" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="ParameterDate" label="Parameter" domainClass="Types.Date">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="ParameterDate" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="ParameterDouble" label="Parameter" domainClass="Types.Double">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="ParameterDouble" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="ParameterString" label="Parameter" domainClass="Types.String">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="ParameterString" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="ParameterInt" label="Parameter" domainClass="Types.Int">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="ParameterInt" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="ParameterChar" label="Parameter" domainClass="Types.Char">
+              <style xsi:type="style:SquareDescription" labelSize="11" labelExpression="ParameterChar" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="ParameterLong" label="Parameter" domainClass="Types.Long">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="ParameterLong" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="ParameterFloat" label="Parameter" domainClass="Types.Float">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="ParameterFloat" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="ParameterBoolean" label="Parameter" domainClass="Types.Boolean">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="ParameterBoolean" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="ParameterVoid" label="Parameter" domainClass="Types.Void">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="ParameterVoid" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
             <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:self.name" labelPosition="node" resizeKind="NSEW" width="8" height="3">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -241,6 +325,67 @@
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DelegationConnector" referenceName="delegationConnectors">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="interface" valueExpression="var:target"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="role" valueExpression="var:source"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Parameter" nodeMappings="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']/@borderedNodeMappings[name='Signature']/@borderedNodeMappings[name='ParameterBoolean'] //@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']/@borderedNodeMappings[name='Signature']/@borderedNodeMappings[name='ParameterChar'] //@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']/@borderedNodeMappings[name='Signature']/@borderedNodeMappings[name='ParameterComplexType'] //@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']/@borderedNodeMappings[name='Signature']/@borderedNodeMappings[name='ParameterDate'] //@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']/@borderedNodeMappings[name='Signature']/@borderedNodeMappings[name='ParameterDouble'] //@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']/@borderedNodeMappings[name='Signature']/@borderedNodeMappings[name='ParameterFloat'] //@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']/@borderedNodeMappings[name='Signature']/@borderedNodeMappings[name='ParameterInt'] //@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']/@borderedNodeMappings[name='Signature']/@borderedNodeMappings[name='ParameterList'] //@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']/@borderedNodeMappings[name='Signature']/@borderedNodeMappings[name='ParameterLong'] //@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']/@borderedNodeMappings[name='Signature']/@borderedNodeMappings[name='ParameterMap'] //@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']/@borderedNodeMappings[name='Signature']/@borderedNodeMappings[name='ParameterString'] //@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@nodeMappings[name='Interface']/@borderedNodeMappings[name='Signature']/@borderedNodeMappings[name='ParameterVoid']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Parametertyp wählen">
+                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                    <initialOperation/>
+                  </buttons>
+                  <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                    <initialOperation/>
+                  </buttons>
+                  <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='repository']/@ownedRepresentations[name='testdiagramm']/@defaultLayer/@toolSections.0/@ownedTools[name='Parameter']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0"/>
+                  <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:SelectDescription" name="Select Parameter" valueExpression="aql:candidate" candidatesExpression="aql:Sequence{'List','Map','ComplexType','Data','Double','String','Int','Char','Long','Float','Boolean','Void'}" candidateDisplayExpression="aql:candidate">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                          <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:newValue = 'List'">
+                            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Types.List" referenceName="parameterType" variableName="variableList"/>
+                          </subModelOperations>
+                          <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:newValue = 'Map'">
+                            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Types.Map" referenceName="parameterType" variableName="variableMap"/>
+                          </subModelOperations>
+                          <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:newValue = 'ComplexType'">
+                            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Types.ComplexType" referenceName="parameterType" variableName="variableComplexType"/>
+                          </subModelOperations>
+                          <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:newValue = 'Date'">
+                            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Types.Date" referenceName="parameterType" variableName="variableDate"/>
+                          </subModelOperations>
+                          <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:newValue = 'Double'">
+                            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Types.Double" referenceName="parameterType" variableName="variableDouble"/>
+                          </subModelOperations>
+                          <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:newValue = 'String'">
+                            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Types.String" referenceName="parameterType" variableName="variableString"/>
+                          </subModelOperations>
+                          <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:newValue = 'Int'">
+                            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Types.Int" referenceName="parameterType" variableName="variableInt"/>
+                          </subModelOperations>
+                          <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:newValue = 'Char'">
+                            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Types.Char" referenceName="parameterType" variableName="variableChar"/>
+                          </subModelOperations>
+                          <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:newValue = 'Long'">
+                            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Types.Long" referenceName="parameterType" variableName="variableLong"/>
+                          </subModelOperations>
+                          <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:newValue = 'Float'">
+                            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Types.Float" referenceName="parameterType" variableName="variableFloat"/>
+                          </subModelOperations>
+                          <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:newValue = 'Boolean'">
+                            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Types.Boolean" referenceName="parameterType" variableName="variableBoolean"/>
+                          </subModelOperations>
+                          <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:newValue = 'Void'">
+                            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Types.Void" referenceName="parameterType" variableName="variableVoid"/>
+                          </subModelOperations>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </controls>
+                  </groups>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
